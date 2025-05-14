@@ -1,0 +1,6 @@
+@phdthesis{PelePhdThesis2011,
+author = {Ofir Pele},
+title = {Distance Functions: Theory, Algorithms and Applications},
+school={The Hebrew University of Jerusalem},
+year = {2011}
+}

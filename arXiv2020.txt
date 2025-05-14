@@ -1,0 +1,6 @@
+@article{Gottlieb-arXiv2020,
+  title={Nested Barycentric Coordinate System as an Explicit Feature Map},
+  author = {Lee-Ad Gottlieb and Eran Kaufman and Aryeh Kontorovich and Gabriel Nivasch and Ofir Pele},
+  journal={arXiv},
+  year={2020}
+}

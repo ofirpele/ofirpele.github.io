@@ -1,0 +1,6 @@
+@INPROCEEDINGS{Pele-eccv2008,
+author = {Ofir Pele and Michael Werman},
+title = {A Linear Time Histogram Metric for Improved SIFT Matching},
+booktitle = {ECCV},
+year = {2008}
+}

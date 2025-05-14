@@ -1,0 +1,6 @@
+@article{Pele-TIFS2017,
+  title={I Know What You Saw Last Minute - Encrypted HTTP Adaptive Video Streaming Title Classification},
+  author = {Ran Dubin and Amit Dvir and Ofir Pele and Ofer Hadar},
+  journal={TIFS},
+  year={2017}
+}
