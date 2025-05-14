@@ -1,6 +1,0 @@
-@INPROCEEDINGS{Pele-eccv2010,
-author = {Ofir Pele and Michael Werman},
-title = {The Quadratic-Chi Histogram Distance Family},
-booktitle = {ECCV},
-year = {2010}
-}

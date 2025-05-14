@@ -1,6 +1,0 @@
-@article{Pele-CCNC2017,
-  title={Analyzing HTTPS Encrypted Traffic to Identify User Operating System, Browser and Application},
-  author = {Jonathan Muehlstein and Yehonatan Zion and Maor Bahumi and Itay Kirshenboim and Ran Dubin and Amit Dvir and Ofir Pele},
-  journal={CCNC},
-  year={2017}
-}

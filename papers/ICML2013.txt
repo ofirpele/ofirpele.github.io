@@ -1,0 +1,6 @@
+@INPROCEEDINGS{Pele-icml2013,
+author = {Ofir Pele and Ben Taskar and Amir Globerson and Michael Werman},
+title = {The Pairwise Piecewise-Linear Embedding for Efficient Non-Linear Classification},
+booktitle = {ICML},
+year = {2013}
+}

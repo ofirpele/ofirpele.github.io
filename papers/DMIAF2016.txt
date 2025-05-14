@@ -1,0 +1,8 @@
+@INPROCEEDINGS{ofirpele-dmiaf2016,
+author = {Ran Dubin and Ofer Hadar and Itay Richman and Ofir Trabelsi and Amit Dvir and Ofir Pele},
+title = {Video Quality Representation Classification of Safari Encrypted DASH Streams},
+booktitle = {DMIAF},
+year = {2016}
+}
+
+

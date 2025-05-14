@@ -1,6 +1,0 @@
-@article{Pele-arXiv2012,
-  title={Improving Perceptual Color Difference using Basic Color Terms},
-  author = {Ofir Pele and Michael Werman},
-  journal={arXiv},
-  year={2012}
-}

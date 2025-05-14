@@ -1,0 +1,6 @@
+@INPROCEEDINGS{pelegsi2013,
+author = {Ofir Pele and Ben Taskar},
+title = {The Tangent Earth Mover's Distance},
+booktitle = {GSI},
+year = {2013}
+}

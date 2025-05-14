@@ -1,6 +1,0 @@
-@INPROCEEDINGS{Pele-iccv2009,
-author = {Ofir Pele and Michael Werman},
-title = {Fast and Robust Earth Mover's Distances},
-booktitle = {ICCV},
-year = {2009}
-}

@@ -1,6 +1,0 @@
-@INPROCEEDINGS{Pele-blackhat2016,
-  title={I Know What You Saw Last Minute - The Chrome Browser Case},
-  author = {Ran Dubin and Amit Dvir and Ofir Pele and Ofer Hadar},
-  booktitle={BlackHat},
-  year={2016}
-}

@@ -1,6 +1,0 @@
-@article{Pele-MS,
- title     = {Adaptation Logic for HTTP Dynamic Adaptive Streaming using Geo-Predictive Crowdsourcing for Mobile Users},
- author    = {Ran Dubin and Amit Dvir and Ofir Pele and Ofer Hadar and Itay Katz and Ori Mashiach},
- journal   = {MS},
- year      = {2016}
-}

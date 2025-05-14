@@ -1,0 +1,6 @@
+@INPROCEEDINGS{Frieman-spie2011,
+author = {Moti Freiman and Ofir Pele and Aviv Hurvitz and Michael Werman and Leo Joskowicz},
+title = {Spectral-Based 2D/3D X-ray to CT Image Rigid Registration},
+booktitle = {SPIE},
+year = {2011}
+}
