@@ -1,664 +1,521 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta NAME="Author" CONTENT="Ofir Pele">
+  <meta name="author" content="Ofir Pele">
   <link rel="icon" type="image/png" sizes="16x16" href="/homepage.png">
 
   <style>
-        body {
-            background-color: #121212;
-            color: #f5f5f5;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-        }
-        
-        h1, h2, h3 {
-            font-family: 'Montserrat', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            font-weight: 600;
-        }
-        
-        p {
-            font-size: 1.1rem;
-        }
-
-        a {
-            color: #ffb74d; /* Light orange for unvisited links */
-            text-decoration: none; /* Removes underline */
-            transition: color 0.2s ease; /* Smooth color transition on hover */
-        }
-
-        a:visited {
-            color: #ff9800; /* Slightly darker orange for visited links */
-        }
-
-        a:hover, a:focus {
-            color: #ffd180; /* Lighter orange on hover/focus for better interactivity */
-            text-decoration: underline; /* Optional: adds underline on hover */
-        }
-
-        a:active {
-            color: #f57c00; /* Darker orange when the link is being clicked */
-        }
-        
-        a img {
-            opacity: 1;
-            transition: opacity 0.3s ease;
-        }
-
-        a:hover, a:focus img {
-            opacity: 0.8; /* Makes the image slightly lighter on hover */
-        }
-
-        /* Optional: Add a subtle border or glow effect on hover */
-        a:hover, a:focus img {
-            box-shadow: 0 0 8px rgba(255, 183, 77, 0.6); /* Subtle orange glow */
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-    </style>
+    body {
+      background-color: #121212;
+      color: #f5f5f5;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
     
-    <!-- Import modern fonts from Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    
+    h1, h2, h3 {
+      font-family: 'Montserrat', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      font-weight: 600;
+    }
+    
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    h3 {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #333;
+      padding-bottom: 0.5rem;
+    }
+    
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
 
-  <!--link rel="stylesheet" type="text/css" href="./mystyle.txt">
+    a {
+      color: #ffb74d; /* Light orange for unvisited links */
+      text-decoration: none; /* Removes underline */
+      transition: color 0.2s ease, border-bottom 0.2s ease; /* Smooth transition on hover */
+    }
 
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<!--<link rel="manifest" href="/manifest.json">-->
-<title>Ofir Pele's Home Page</title>
+    a:visited {
+      color: #ff9800; /* Slightly darker orange for visited links */
+    }
+
+    a:hover, a:focus {
+      color: #ffd180; /* Lighter orange on hover/focus for better interactivity */
+      text-decoration: none; /* Remove the underline */
+      border-bottom: 1px solid #ffd180; /* Add a subtle underline */
+    }
+
+    a:active {
+      color: #f57c00; /* Darker orange when the link is being clicked */
+    }
+    
+    a img {
+      opacity: 1;
+      transition: opacity 0.3s ease, transform 0.2s ease;
+      border: none; /* Make sure there's no border */
+    }
+
+    a:hover img, a:focus img {
+      opacity: 0.8; /* Makes the image slightly lighter on hover */
+      transform: scale(1.05); /* Slightly enlarges the image */
+      box-shadow: 0 0 8px rgba(255, 183, 77, 0.6); /* Subtle orange glow */
+      border: none; /* Ensure no border on hover */
+    }
+    
+    /* Profile section */
+    .profile {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 2rem;
+    }
+    
+    .profile-image {
+      margin-right: 2rem;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    
+    .profile-image img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      transition: transform 0.3s ease;
+    }
+    
+    .profile-info {
+      flex: 1;
+    }
+    
+    .social-icons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    
+    .social-icons a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #2a2a2a;
+      transition: all 0.3s ease;
+    }
+    
+    .social-icons a:hover {
+      transform: translateY(-3px);
+      background-color: #3a3a3a;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+    
+    .social-icons img {
+      width: 20px;
+      height: 20px;
+    }
+    
+    /* Publications section */
+    .publications {
+      margin-top: 2rem;
+    }
+    
+    .publication {
+      display: grid;
+      grid-template-columns: 20px 1fr;
+      gap: 0.5rem 1rem;
+      margin-bottom: 1.5rem;
+      padding: 1rem;
+      background-color: #1a1a1a;
+      border-radius: 8px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    
+    .publication:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+    
+    .publication-title {
+      grid-column: 2;
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .publication-authors {
+      grid-column: 2;
+      font-size: 0.95rem;
+      margin-bottom: 0.3rem;
+    }
+    
+    .publication-venue {
+      grid-column: 2;
+      font-size: 0.9rem;
+      color: #bbb;
+    }
+    
+    .publication-links {
+      grid-column: 2;
+      margin-top: 0.5rem;
+    }
+    
+    .publication-links a {
+      display: inline-flex;
+      align-items: center;
+      margin-right: 0.8rem;
+    }
+    
+    .publication-links img {
+      margin-right: 0.3rem;
+    }
+    
+    .bullet {
+      grid-column: 1;
+      grid-row: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    /* Teaching section */
+    .teaching-item {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      padding: 1rem;
+      background-color: #1a1a1a;
+      border-radius: 8px;
+      transition: transform 0.2s ease;
+    }
+    
+    .teaching-item:hover {
+      transform: translateY(-2px);
+    }
+    
+    .teaching-year {
+      font-weight: 600;
+    }
+    
+    /* Divider */
+    .divider {
+      height: 1px;
+      background-image: linear-gradient(to right, transparent, #333, transparent);
+      margin: 2rem 0;
+      border: none;
+    }
+    
+    /* Responsive design */
+    @media (max-width: 768px) {
+      .container {
+        padding: 1rem;
+      }
+      
+      .profile {
+        flex-direction: column;
+      }
+      
+      .profile-image {
+        margin-right: 0;
+        margin-bottom: 1.5rem;
+        max-width: 150px;
+      }
+      
+      .publication {
+        grid-template-columns: 15px 1fr;
+      }
+    }
+  </style>
+  
+  <!-- Import modern fonts from Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <title>Ofir Pele's Home Page</title>
 </head>
-
-<table>
-<tr>
-<td colspan=3>
-<h1>Ofir Pele</h1>
-</td>
-</tr>
-<tr>
-<td align="left">
-<img src="./ofirpele.jpg" style="width: 177px;" alt="me">
-</td>
-<td><img src="./empty.gif" width=30 alt=""></td>
-<td valign="top">
-<P>Algorithm and Software Developer<br>
-<br>
-ofirpele@gmail.com
-<br> <br> 
-<a href= "https://www.linkedin.com/in/ofir-pele/"> <img src="./linkedin.png" BORDER=0 alt="Linkedin" width="25" height="25"></a>
-<br> <br> 
-<a href= "https://github.com/ofirpele"> <img src="./github-mark-white.png" BORDER=0 alt="GitHub" width="25" height="25"></a>
-<br>
-</P>
-</td>
-</tr>
-</table>
-
-<table>
-<tr><td colspan=3><hr></td></tr>
-<tr>
-<td colspan=3>
-<H3>Publications and Code</H3>
-</td>
-</tr>
-
-
-
-<tr>
-<td align="left"><img src="./1dot2c.gif" alt="*"></td>
-<td colspan=2 align="left">
-Nested Barycentric Coordinate System as an Explicit Feature Map
-</td></tr>
-<tr>
-<td></td>
-<td><img src="./empty.gif" width=50 height=1 alt=""></td>
-<td>
-Lee-Ad Gottlieb, Eran Kaufman, Aryeh Kontorovich, Gabriel Nivasch, Ofir Pele
-</td></tr>
-<tr>
-<td></td>
-<td></td>
-<td>
-International Conference on Artificial Intelligence and Statistics 2021 
-</td></tr>
-
-
-
-
-<tr>
-<td align="left"><img src="./1dot2c.gif" alt="*"></td>
-<td colspan=2 align="left">
-Improving Blood Glucose Level Predictability using Machine Learning
-</td></tr>
-<tr>
-<td></td>
-<td><img src="./empty.gif" width=50 height=1 alt=""></td>
-<td>
-Roy Eldor, Mariana Yaron, Sigal Shaklai, Maya Ish-Shalom, Gabi Shefer, Naftali Stern, Nehor Golan, Amit Dvir, Ofir Pele, Mira Gonen
-</td></tr>
-<tr>
-<td></td>
-<td></td>
-<td>
-Diabetes/Metabolism Research and Reviews, 2020
-</td></tr>
-
-
-
-
-<tr>
-<td align="left"><img src="./1dot2c.gif" alt="*"></td>
-<td colspan=2 align="left">
-A Fair Server Adaptation Algorithm for HTTP Adaptive Streaming using Video Complexity
-</td></tr>
-<tr>
-<td></td>
-<td><img src="./empty.gif" width=50 height=1 alt=""></td>
-<td>
-Ran Dubin, Rafi Shalala, Amit Dvir, Ofir Pele, Ofer Hadar
-</td></tr>
-<tr>
-<td></td>
-<td></td>
-<td>
-Multimedia Tools and Applications, 2019
-</td></tr>
-
-
-
-<tr>
-<td align="left"><img src="./1dot2c.gif" alt="*"></td>
-<td colspan=2 align="left">
-From Internet Swear Words to Stadium Violence in Football (Soccer) Games - An Israeli Case Study
-</td></tr>
-<tr>
-<td></td>
-<td><img src="./empty.gif" width=50 height=1 alt=""></td>
-<td>
-Uzi Ben Shalom, Amit Dvir, Moshe Levy,
-Moti Zwilling, Eithan Orkibi, Nadav Gabay, Ofir Pele
-</td></tr>
-<tr>
-<td></td>
-<td></td>
-<td>
-International Review for the Sociology of Sport 2019
-</td></tr>
-
-
-<tr>
-<td align="left"><img src="./1dot2c.gif" alt="*"></td>
-<td colspan=2 align="left">
-Video Quality Representation Classification of Encrypted HTTP Adaptive Video Streaming
-</td></tr>
-<tr>
-<td></td>
-<td><img src="./empty.gif" width=50 height=1 alt=""></td>
-<td>
-Ran Dubin, Ofer Hadar, Amit Dvir, Ofir Pele
-</td></tr>
-<tr>
-<td></td>
-<td></td>
-<td>
-KSII Transactions on Internet and Information Systems, 2018
-</td></tr>
-
-
-
-
-
-
-
-
-<tr>
-<td align="left"><img src="./1dot2c.gif" alt="*"></td>
-<td colspan=2 align="left">
-I Know What You Saw Last Minute - Encrypted HTTP Adaptive Video Streaming Title Classification
-</td></tr>
-<tr>
-<td></td>
-<td><img src="./empty.gif" width=50 height=1 alt=""></td>
-<td>
-Ran Dubin, Amit Dvir, Ofir Pele, Ofer Hadar
-</td></tr>
-<tr>
-<td></td>
-<td></td>
-<td>
-TIFS 2017
-[<a href="./papers/TIFS2017.pdf"><img src="./pdf.gif" BORDER=0 alt="pdf"></a>,&nbsp;
-<a href="./papers/TIFS2017.txt"><img src="./bibTex.png" BORDER=0 alt="bibtex"></a>
-]
-</td></tr>
-
-
-
-
-
-<tr>
-<td align="left"><img src="./1dot2c.gif" alt="*"></td>
-<td colspan=2 align="left">
-Analyzing HTTPS Encrypted Traffic to Identify User Operating System, Browser and Application
-</td></tr>
-<tr>
-<td></td>
-<td><img src="./empty.gif" width=50 height=1 alt=""></td>
-<td>
-Jonathan Muehlstein, Yehonatan Zion, Maor Bahumi, Itay Kirshenboim, Ran Dubin, Amit Dvir, Ofir Pele
-</td></tr>
-<tr>
-<td></td>
-<td></td>
-<td>
-CCNC HC 2017
-[<a href="./papers/CCNC2017.pdf"><img src="./pdf.gif" BORDER=0 alt="pdf"></a>,&nbsp;
-<a href="./papers/CCNC2017.txt"><img src="./bibTex.png" BORDER=0 alt="bibtex"></a>
-]
-</td></tr>
-
-
-<tr>
-<td align="left"><img src="./1dot2c.gif" alt="*"></td>
-<td colspan=2 align="left">
-Robust Machine Learning for Encrypted Traffic Classification
-</td></tr>
-<tr>
-<td></td>
-<td><img src="./empty.gif" width=50 height=1 alt=""></td>
-<td>
-Amit Dvir, Yehonatan Zion, Jonathan Muehlstein, Ofir Pele, Chen Hajaj, Ran Dubin
-</td></tr>
-<tr>
-<td></td>
-<td></td>
-<td>
-arXiv 2016
-[<a href="https://arxiv.org/pdf/1603.04865"><img src="./pdf.gif" BORDER=0 alt="pdf"></a>,&nbsp;
-<a href="./papers/arXiv2016e.txt"><img src="./bibTex.png" BORDER=0 alt="bibtex"></a>
-]
-</td></tr>
-
-
-
-
-
-
-
-
-
-<tr>
-<td align="left"><img src="./1dot2c.gif" alt="*"></td>
-<td colspan=2 align="left">
-Interpolated Discretized Embedding of Single Vectors and Vector Pairs for Classification, Metric Learning and Distance Approximation 
-</td></tr>
-<tr>
-<td></td>
-<td><img src="./empty.gif" width=50 height=1 alt=""></td>
-<td>
-Ofir Pele, Yakir Ben-Aliz
-</td></tr>
-<tr>
-<td></td>
-<td></td>
-<td>
-arXiv 2016
-[<a href="./papers/id_paper.pdf"><img src="./pdf.gif" BORDER=0 alt="pdf"></a>,&nbsp;
-<a href="./papers/arxiv2016d.txt"><img src="./bibTex.png" BORDER=0 alt="bibtex"></a>,&nbsp;
-<a href= "https://github.com/ofirpele/ID"> <img src="./github-mark-white.png" BORDER=0 alt="code" width="20" height="20"></a>
-]
-</td></tr>
-
-
-<tr>
-<td align="left"><img src="./1dot2c.gif" alt="*"></td>
-<td colspan=2 align="left">
-I Know What You Saw Last Minute - The Chrome Browser Case 
-</td></tr>
-<tr>
-<td></td>
-<td><img src="./empty.gif" width=50 height=1 alt=""></td>
-<td>
-Ran Dubin, Ofir Pele, Amit Dvir, Ofer Hadar
-</td></tr>
-<tr>
-<td></td>
-<td></td>
-<td>
-BlackHat 2016
-[<a href="./papers/BlackHat2016.pdf"><img src="./pdf.gif" BORDER=0 alt="pdf"></a>,&nbsp;
-<a href="./papers/BlackHat2016.txt"><img src="./bibTex.png" BORDER=0 alt="bibtex"></a>
-,&nbsp;<a href="http://www.digitalwhisper.co.il/files/Zines/0x50/DW80-3-SSLStreaming.pdf"><img src="./pdf.gif" BORDER=0 alt="pdf"> Hebrew</a>
-]
-</td></tr>
-
-
-
-<tr>
-<td align="left"><img src="./1dot2c.gif" alt="*"></td>
-<td colspan=2 align="left">
-Video Quality Representation Classification of Safari Encrypted DASH Streams
-</td></tr>
-<tr>
-<td></td>
-<td><img src="./empty.gif" width=50 height=1 alt=""></td>
-<td>
-Ran Dubin, Ofer Hadar, Itay Richman, Ofir Trabelsi, Amit Dvir, Ofir Pele 
-</td></tr>
-<tr>
-<td></td>
-<td></td>
-<td>
-DMIAF 2016
-[<a href="./papers/DMIAF2016.pdf"><img src="./pdf.gif" BORDER=0 alt="pdf"></a>,&nbsp;
-<a href="./papers/DMIAF2016.txt"><img src="./bibTex.png" BORDER=0 alt="bibtex"></a>
-]
-</td></tr>
-
-
-
-
-
-
-<tr>
-<td align="left"><img src="./1dot2c.gif" alt="*"></td>
-<td colspan=2 align="left">
-Adaptation Logic for HTTP Dynamic Adaptive Streaming using Geo-Predictive Crowdsourcing for Mobile Users
-</td></tr>
-<tr>
-<td></td>
-<td><img src="./empty.gif" width=50 height=1 alt=""></td>
-<td>
-Ran Dubin, Amit Dvir, Ofir Pele, Ofer Hadar, Itay Katz, Ori Mashiach
-</td></tr>
-<tr>
-<td></td>
-<td></td>
-<td>
-MS 2016
-[<a href="./papers/MS.pdf"><img src="./pdf.gif" BORDER=0 alt="pdf"></a>,&nbsp;
-<a href="./papers/MS.txt"><img src="./bibTex.png" BORDER=0 alt="bibtex"></a>
-]
-</td></tr>
-
-
-
-
-
-
-
-
-
-
-<tr>
-<td align="left"><img src="./1dot2c.gif" alt="*"></td>
-<td colspan=2 align="left">
-The Tangent Earth Mover's Distance
-</td></tr>
-<tr>
-<td></td>
-<td><img src="./empty.gif" width=50 height=1 alt=""></td>
-<td>
-Ofir Pele, Ben Taskar
-</td></tr>
-<tr>
-<td></td>
-<td></td>
-<td>
-GSI 2013, Oral
-[<a href="./papers/GSI2013.pdf"><img src="./pdf.gif" BORDER=0 alt="pdf"></a>,&nbsp;
-<a href="./papers/GSI2013.txt"><img src="./bibTex.png" BORDER=0 alt="bibtex"></a>,&nbsp;
-<a href= "https://github.com/ofirpele/EMDTangent"> <img src="./github-mark-white.png" BORDER=0 alt="code" width="20" height="20"></a>
-]
-</td></tr>
-
-
-<tr>
-<td align="left"><img src="./1dot2c.gif" alt="*"></td>
-<td colspan=2 align="left">
-The Pairwise Piecewise-Linear Embedding for Efficient Non-Linear Classification
-</td></tr>
-<tr>
-<td></td>
-<td><img src="./empty.gif" width=50 height=1 alt=""></td>
-<td>
-Ofir Pele, Ben Taskar, Amir Globerson, Michael Werman
-</td></tr>
-<tr>
-<td></td>
-<td></td>
-<td>
-ICML 2013
-[<a href="./papers/ICML2013.pdf"><img src="./pdf.gif" BORDER=0 alt="pdf"></a>,&nbsp;
-<a href="./papers/ICML2013.txt"><img src="./bibTex.png" BORDER=0 alt="bibtex"></a>,&nbsp;
-<a href= "https://github.com/ofirpele/PL2"> <img src="./github-mark-white.png" BORDER=0 alt="code" width="20" height="20"></a>
-]
-</td></tr>
-
-
-<tr>
-<td align="left"><img src="./1dot2c.gif" alt="*"></td>
-<td colspan=2 align="left">
-Improving Perceptual Color Difference using Basic Color Terms
-</td></tr>
-<tr>
-<td></td>
-<td><img src="./empty.gif" width=50 height=1 alt=""></td>
-<td>
-Ofir Pele, Michael Werman
-</td></tr>
-<tr>
-<td></td>
-<td></td>
-<td>
-arXiv 2012
-[<a href="./papers/arXiv2012.pdf"><img src="./pdf.gif" BORDER=0 alt="pdf"></a>,&nbsp;
-<a href="./papers/arXiv2012.txt"><img src="./bibTex.png" BORDER=0 alt="bibtex"></a>,&nbsp;
-<a href= "https://github.com/ofirpele/color_distance"> <img src="./github-mark-white.png" BORDER=0 alt="code" width="20" height="20"></a>
-]
-</td></tr>
-
-<tr>
-<td align="left"><img src="./1dot2c.gif" alt="*"></td>
-<td colspan=2 align="left">
-Distance Functions: Theory, Algorithms and Applications
-</td></tr>
-<tr>
-<td></td>
-<td><img src="./empty.gif" width=50 height=1 alt=""></td>
-<td>
-Ofir Pele
-</td></tr>
-<tr>
-<td></td>
-<td></td>
-<td>
-Ph.D. Thesis 2011 (includes a new non-linear, non-Mahalanobis metric learning method in chapter 5) 
-[<a href="./papers/ofirpele_phd_thesis.pdf"><img src="./pdf.gif" BORDER=0 alt="pdf"></a>,&nbsp;
-<a href="./papers/ofirpele_phd_thesis.txt"><img src="./bibTex.png" BORDER=0 alt="bibtex"></a>
-]
-</td></tr>
-
-
-
-
-<tr>
-<td align="left"><img src="./1dot2c.gif" alt="*"></td>
-<td colspan=2 align="left">
-Spectral-Based 2D/3D X-ray to CT Image Rigid Registration
-</td></tr>
-<tr>
-<td></td>
-<td><img src="./empty.gif" width=50 height=1 alt=""></td>
-<td>
-Moti Freiman, Ofir Pele, Aviv Hurvitz, Michael Werman, Leo Joskowicz
-</td></tr>
-<tr>
-<td></td>
-<td></td>
-<td>
-SPIE 2011
-[<a href="./papers/SPIE2011.pdf"><img src="./pdf.gif" BORDER=0 alt="pdf"></a>,&nbsp;
-<a href="./papers/SPIE2011.txt"><img src="./bibTex.png" BORDER=0 alt="bibtex"></a>
-]
-</td></tr>
-
-
-<tr>
-<td align="left"><img src="./1dot2c.gif" alt="*"></td>
-<td colspan=2 align="left">
-The Quadratic-Chi Histogram Distance Family
-</td></tr>
-<tr>
-<td></td>
-<td><img src="./empty.gif" width=50 height=1 alt=""></td>
-<td>
-Ofir Pele, Michael Werman
-</td></tr>
-<tr>
-<td></td>
-<td></td>
-<td>
-ECCV 2010
-[<a href="./papers/ECCV2010.pdf"><img src="./pdf.gif" BORDER=0 alt="pdf"></a>,&nbsp;
-<a href="./papers/ECCV2010.txt"><img src="./bibTex.png" BORDER=0 alt="bibtex"></a>,&nbsp;
-<a href= "https://github.com/ofirpele/QC"> <img src="./github-mark-white.png" BORDER=0 alt="code" width="20" height="20"></a>
-]
-</td></tr>
-
-
-
-
-<tr>
-<td align="left"><img src="./1dot2c.gif" alt="*"></td>
-<td colspan=2 align="left">
-Fast and Robust Earth Mover's Distances
-</td></tr>
-<tr>
-<td></td>
-<td><img src="./empty.gif" width=50 height=1 alt=""></td>
-<td>
-Ofir Pele, Michael Werman
-</td></tr>
-<tr>
-<td></td>
-<td></td>
-<td>
-ICCV 2009
-[<a href="./papers/ICCV2009.pdf"><img src="./pdf.gif" BORDER=0 alt="pdf"></a>,&nbsp;
-<a href="./papers/ICCV2009.txt"><img src="./bibTex.png" BORDER=0 alt="bibtex"></a>,&nbsp;
-<a href= "https://github.com/ofirpele/FastEMD"> <img src="./github-mark-white.png" BORDER=0 alt="code" width="20" height="20"></a>
-]
-</td></tr>
-
-
-
-<tr>
-<td align="left"><img src="./1dot2c.gif" alt="*"></td>
-<td colspan=2 align="left">
-A Linear Time Histogram Metric for Improved SIFT Matching
-</td></tr>
-<tr>
-<td></td>
-<td><img src="./empty.gif" width=50 height=1 alt=""></td>
-<td>
-Ofir Pele, Michael Werman
-</td></tr>
-<tr>
-<td></td>
-<td></td>
-<td>
-ECCV 2008
-[<a href="./papers/ECCV2008.pdf"><img src="./pdf.gif" BORDER=0 alt="pdf"></a>,&nbsp;
-<a href="./papers/ECCV2008.txt"><img src="./bibTex.png" BORDER=0 alt="bibtex"></a>,&nbsp;
-<!--<a href= "./SiftDist/"> <img src="./homepage.png" BORDER=0 alt="homepage"></a>,&nbsp-->
-<a href= "https://github.com/ofirpele/SiftDist_and_EMD_MOD"> <img src="./github-mark-white.png" BORDER=0 alt="code" width="20" height="20"></a>
-]
-</td></tr>
-
-
-
-<tr>
-<td align="left"><img src="./1dot2c.gif" alt="*"></td>
-<td colspan=2 align="left">
-Robust Real Time Pattern Matching using Bayesian Sequential
-Hypothesis Testing
-</td></tr>
-<tr>
-<td></td>
-<td><img src="./empty.gif" width=50 height=1 alt=""></td>
-<td>
-Ofir Pele, Michael Werman
-</td></tr>
-<tr>
-<td></td>
-<td></td>
-<td>
-PAMI 2008
-[<a href="./papers/pattern_matching_pami.pdf"><img src="./pdf.gif" BORDER=0 alt="pdf"></a>,&nbsp;
-<a href="./papers/pattern_matching_pami.txt"><img src="./bibTex.png" BORDER=0 alt="bibtex"></a>,&nbsp;
-<a href= "https://github.com/ofirpele/PatternMatchingSequentialHypothesisTesting"> <img src="./github-mark-white.png" BORDER=0 alt="code" width="20" height="20"></a>
-]
-</td></tr>
-
-
-
-<tr>
-<td align="left"><img src="./1dot2c.gif" alt="*"></td>
-<td colspan=2>
-Accelerating Pattern Matching or How Much Can You Slide?
-</td></tr>
-<tr>
-<td></td>
-<td><img src="./empty.gif" width=50 height=1 alt=""></td>
-<td>
-Ofir Pele, Michael Werman
-</td></tr>
-<tr>
-<td></td>
-<td></td>
-<td>
-ACCV 2007 [<a href="./papers/ACCV2007.pdf"><img src="./pdf.gif" BORDER=0 alt="pdf"></a>,&nbsp;
-<a href="./papers/ACCV2007.txt"><img src="./bibTex.png" BORDER=0 alt="bibtex"></a>]
-</td></tr>
-
-
-
-<tr><td colspan=3><hr></td></tr>
-<tr>
-<td colspan=3>
-<H3>Teaching</H3>
-</td>
-</tr>
-
-
-<tr>
-  <td colspan=2 align="left">2020</td>
-  <td>
-	&nbsp; <a href="./teaching/style_and_good_practices.zip">Style and Good Practices in Programming</a> 
-  </td>
-</tr>
-<!-- -->
-<tr>
-  <td colspan=2 align="left">2010</td>
-  <td>
-	&nbsp; <a href="http://www.ics.forth.gr/eccv2010/intro.php">ECCV 2010</a> Tutorial: Distance Functions and Metric Learning
-	[<a href="./teaching/DFML_ECCV2010_tutorial_part_1_v3.pdf"><img src="./pdf.gif" BORDER=0 alt="pdf"></a>,&nbsp;
-	<a href="./teaching/DFML_ECCV2010_tutorial_part_1_v3.ppt"><img src="./pptx.png" BORDER=0 alt="pptx" width="20" height="20"></a>]
-</a>
-</td>
-</tr>
-
-</table>
-
+<body>
+  <div class="container">
+    <header>
+      <h1>Ofir Pele</h1>
+      
+      <div class="profile">
+        <div class="profile-image">
+          <img src="./ofirpele.jpg" alt="Ofir Pele" style="width: 177px;">
+        </div>
+        
+        <div class="profile-info">
+          <p>Algorithm and Software Developer<br>
+          <br>
+          ofirpele@gmail.com</p>
+          
+          <div class="social-icons">
+            <a href="https://www.linkedin.com/in/ofir-pele/" title="LinkedIn">
+              <img src="./linkedin.png" alt="LinkedIn">
+            </a>
+            <a href="https://github.com/ofirpele" title="GitHub">
+              <img src="./github-mark-white.png" alt="GitHub">
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+    
+    <hr class="divider">
+    
+    <section class="publications">
+      <h3>Publications and Code</h3>
+      
+      <div class="publication">
+        <div class="publication-title">Nested Barycentric Coordinate System as an Explicit Feature Map</div>
+        <div class="publication-authors">Lee-Ad Gottlieb, Eran Kaufman, Aryeh Kontorovich, Gabriel Nivasch, Ofir Pele</div>
+        <div class="publication-venue">International Conference on Artificial Intelligence and Statistics 2021</div>
+      </div>
+      
+      <div class="publication">
+        <div class="publication-title">Improving Blood Glucose Level Predictability using Machine Learning</div>
+        <div class="publication-authors">Roy Eldor, Mariana Yaron, Sigal Shaklai, Maya Ish-Shalom, Gabi Shefer, Naftali Stern, Nehor Golan, Amit Dvir, Ofir Pele, Mira Gonen</div>
+        <div class="publication-venue">Diabetes/Metabolism Research and Reviews, 2020</div>
+      </div>
+      
+      <div class="publication">
+        <div class="publication-title">A Fair Server Adaptation Algorithm for HTTP Adaptive Streaming using Video Complexity</div>
+        <div class="publication-authors">Ran Dubin, Rafi Shalala, Amit Dvir, Ofir Pele, Ofer Hadar</div>
+        <div class="publication-venue">Multimedia Tools and Applications, 2019</div>
+      </div>
+      
+      <div class="publication">
+        <div class="publication-title">From Internet Swear Words to Stadium Violence in Football (Soccer) Games - An Israeli Case Study</div>
+        <div class="publication-authors">Uzi Ben Shalom, Amit Dvir, Moshe Levy, Moti Zwilling, Eithan Orkibi, Nadav Gabay, Ofir Pele</div>
+        <div class="publication-venue">International Review for the Sociology of Sport 2019</div>
+      </div>
+      
+      <div class="publication">
+        <div class="publication-title">Video Quality Representation Classification of Encrypted HTTP Adaptive Video Streaming</div>
+        <div class="publication-authors">Ran Dubin, Ofer Hadar, Amit Dvir, Ofir Pele</div>
+        <div class="publication-venue">KSII Transactions on Internet and Information Systems, 2018</div>
+      </div>
+      
+      <div class="publication">
+        <div class="publication-title">I Know What You Saw Last Minute - Encrypted HTTP Adaptive Video Streaming Title Classification</div>
+        <div class="publication-authors">Ran Dubin, Amit Dvir, Ofir Pele, Ofer Hadar</div>
+        <div class="publication-venue">TIFS 2017</div>
+        <div class="publication-links">
+          <a href="./papers/TIFS2017.pdf"><img src="./pdf.gif" alt="pdf">PDF</a>
+          <a href="./papers/TIFS2017.txt"><img src="./bibTex.png" alt="bibtex" width="20" height="20">BibTeX</a>
+        </div>
+      </div>
+      
+      <div class="publication">
+        <div class="publication-title">Analyzing HTTPS Encrypted Traffic to Identify User Operating System, Browser and Application</div>
+        <div class="publication-authors">Jonathan Muehlstein, Yehonatan Zion, Maor Bahumi, Itay Kirshenboim, Ran Dubin, Amit Dvir, Ofir Pele</div>
+        <div class="publication-venue">CCNC HC 2017</div>
+        <div class="publication-links">
+          <a href="./papers/CCNC2017.pdf"><img src="./pdf.gif" alt="pdf">PDF</a>
+          <a href="./papers/CCNC2017.txt"><img src="./bibTex.png" alt="bibtex" width="20" height="20">BibTeX</a>
+        </div>
+      </div>
+      
+      <div class="publication">
+        <div class="publication-title">Robust Machine Learning for Encrypted Traffic Classification</div>
+        <div class="publication-authors">Amit Dvir, Yehonatan Zion, Jonathan Muehlstein, Ofir Pele, Chen Hajaj, Ran Dubin</div>
+        <div class="publication-venue">arXiv 2016</div>
+        <div class="publication-links">
+          <a href="https://arxiv.org/pdf/1603.04865"><img src="./pdf.gif" alt="pdf">PDF</a>
+          <a href="./papers/arXiv2016e.txt"><img src="./bibTex.png" alt="bibtex" width="20" height="20">BibTeX</a>
+        </div>
+      </div>
+      
+      <div class="publication">
+        <div class="publication-title">Interpolated Discretized Embedding of Single Vectors and Vector Pairs for Classification, Metric Learning and Distance Approximation</div>
+        <div class="publication-authors">Ofir Pele, Yakir Ben-Aliz</div>
+        <div class="publication-venue">arXiv 2016</div>
+        <div class="publication-links">
+          <a href="./papers/id_paper.pdf"><img src="./pdf.gif" alt="pdf">PDF</a>
+          <a href="./papers/arxiv2016d.txt"><img src="./bibTex.png" alt="bibtex" width="20" height="20">BibTeX</a>
+          <a href="https://github.com/ofirpele/ID"><img src="./github-mark-white.png" alt="code" width="20" height="20">Code</a>
+        </div>
+      </div>
+      
+      <div class="publication">
+        <div class="publication-title">I Know What You Saw Last Minute - The Chrome Browser Case</div>
+        <div class="publication-authors">Ran Dubin, Ofir Pele, Amit Dvir, Ofer Hadar</div>
+        <div class="publication-venue">BlackHat 2016</div>
+        <div class="publication-links">
+          <a href="./papers/BlackHat2016.pdf"><img src="./pdf.gif" alt="pdf">PDF</a>
+          <a href="./papers/BlackHat2016.txt"><img src="./bibTex.png" alt="bibtex" width="20" height="20">BibTeX</a>
+          <a href="http://www.digitalwhisper.co.il/files/Zines/0x50/DW80-3-SSLStreaming.pdf"><img src="./pdf.gif" alt="pdf">Hebrew</a>
+        </div>
+      </div>
+      
+      <div class="publication">
+        <div class="publication-title">Video Quality Representation Classification of Safari Encrypted DASH Streams</div>
+        <div class="publication-authors">Ran Dubin, Ofer Hadar, Itay Richman, Ofir Trabelsi, Amit Dvir, Ofir Pele</div>
+        <div class="publication-venue">DMIAF 2016</div>
+        <div class="publication-links">
+          <a href="./papers/DMIAF2016.pdf"><img src="./pdf.gif" alt="pdf">PDF</a>
+          <a href="./papers/DMIAF2016.txt"><img src="./bibTex.png" alt="bibtex" width="20" height="20">BibTeX</a>
+        </div>
+      </div>
+      
+      <div class="publication">
+        <div class="publication-title">Adaptation Logic for HTTP Dynamic Adaptive Streaming using Geo-Predictive Crowdsourcing for Mobile Users</div>
+        <div class="publication-authors">Ran Dubin, Amit Dvir, Ofir Pele, Ofer Hadar, Itay Katz, Ori Mashiach</div>
+        <div class="publication-venue">MS 2016</div>
+        <div class="publication-links">
+          <a href="./papers/MS.pdf"><img src="./pdf.gif" alt="pdf">PDF</a>
+          <a href="./papers/MS.txt"><img src="./bibTex.png" alt="bibtex" width="20" height="20">BibTeX</a>
+        </div>
+      </div>
+      
+      <div class="publication">
+        <div class="publication-title">The Tangent Earth Mover's Distance</div>
+        <div class="publication-authors">Ofir Pele, Ben Taskar</div>
+        <div class="publication-venue">GSI 2013, Oral</div>
+        <div class="publication-links">
+          <a href="./papers/GSI2013.pdf"><img src="./pdf.gif" alt="pdf">PDF</a>
+          <a href="./papers/GSI2013.txt"><img src="./bibTex.png" alt="bibtex" width="20" height="20">BibTeX</a>
+          <a href="https://github.com/ofirpele/EMDTangent"><img src="./github-mark-white.png" alt="code" width="20" height="20">Code</a>
+        </div>
+      </div>
+      
+      <div class="publication">
+        <div class="publication-title">The Pairwise Piecewise-Linear Embedding for Efficient Non-Linear Classification</div>
+        <div class="publication-authors">Ofir Pele, Ben Taskar, Amir Globerson, Michael Werman</div>
+        <div class="publication-venue">ICML 2013</div>
+        <div class="publication-links">
+          <a href="./papers/ICML2013.pdf"><img src="./pdf.gif" alt="pdf">PDF</a>
+          <a href="./papers/ICML2013.txt"><img src="./bibTex.png" alt="bibtex" width="20" height="20">BibTeX</a>
+          <a href="https://github.com/ofirpele/PL2"><img src="./github-mark-white.png" alt="code" width="20" height="20">Code</a>
+        </div>
+      </div>
+      
+      <div class="publication">
+        <div class="publication-title">Improving Perceptual Color Difference using Basic Color Terms</div>
+        <div class="publication-authors">Ofir Pele, Michael Werman</div>
+        <div class="publication-venue">arXiv 2012</div>
+        <div class="publication-links">
+          <a href="./papers/arXiv2012.pdf"><img src="./pdf.gif" alt="pdf">PDF</a>
+          <a href="./papers/arXiv2012.txt"><img src="./bibTex.png" alt="bibtex" width="20" height="20">BibTeX</a>
+          <a href="https://github.com/ofirpele/color_distance"><img src="./github-mark-white.png" alt="code" width="20" height="20">Code</a>
+        </div>
+      </div>
+      
+      <div class="publication">
+        <div class="publication-title">Distance Functions: Theory, Algorithms and Applications</div>
+        <div class="publication-authors">Ofir Pele</div>
+        <div class="publication-venue">Ph.D. Thesis 2011 (includes a new non-linear, non-Mahalanobis metric learning method in chapter 5)</div>
+        <div class="publication-links">
+          <a href="./papers/ofirpele_phd_thesis.pdf"><img src="./pdf.gif" alt="pdf">PDF</a>
+          <a href="./papers/ofirpele_phd_thesis.txt"><img src="./bibTex.png" alt="bibtex" width="20" height="20">BibTeX</a>
+        </div>
+      </div>
+      
+      <div class="publication">
+        <div class="publication-title">Spectral-Based 2D/3D X-ray to CT Image Rigid Registration</div>
+        <div class="publication-authors">Moti Freiman, Ofir Pele, Aviv Hurvitz, Michael Werman, Leo Joskowicz</div>
+        <div class="publication-venue">SPIE 2011</div>
+        <div class="publication-links">
+          <a href="./papers/SPIE2011.pdf"><img src="./pdf.gif" alt="pdf">PDF</a>
+          <a href="./papers/SPIE2011.txt"><img src="./bibTex.png" alt="bibtex" width="20" height="20">BibTeX</a>
+        </div>
+      </div>
+      
+      <div class="publication">
+        <div class="publication-title">The Quadratic-Chi Histogram Distance Family</div>
+        <div class="publication-authors">Ofir Pele, Michael Werman</div>
+        <div class="publication-venue">ECCV 2010</div>
+        <div class="publication-links">
+          <a href="./papers/ECCV2010.pdf"><img src="./pdf.gif" alt="pdf">PDF</a>
+          <a href="./papers/ECCV2010.txt"><img src="./bibTex.png" alt="bibtex" width="20" height="20">BibTeX</a>
+          <a href="https://github.com/ofirpele/QC"><img src="./github-mark-white.png" alt="code" width="20" height="20">Code</a>
+        </div>
+      </div>
+      
+      <div class="publication">
+        <div class="publication-title">Fast and Robust Earth Mover's Distances</div>
+        <div class="publication-authors">Ofir Pele, Michael Werman</div>
+        <div class="publication-venue">ICCV 2009</div>
+        <div class="publication-links">
+          <a href="./papers/ICCV2009.pdf"><img src="./pdf.gif" alt="pdf">PDF</a>
+          <a href="./papers/ICCV2009.txt"><img src="./bibTex.png" alt="bibtex" width="20" height="20">BibTeX</a>
+          <a href="https://github.com/ofirpele/FastEMD"><img src="./github-mark-white.png" alt="code" width="20" height="20">Code</a>
+        </div>
+      </div>
+      
+      <div class="publication">
+        <div class="publication-title">A Linear Time Histogram Metric for Improved SIFT Matching</div>
+        <div class="publication-authors">Ofir Pele, Michael Werman</div>
+        <div class="publication-venue">ECCV 2008</div>
+        <div class="publication-links">
+          <a href="./papers/ECCV2008.pdf"><img src="./pdf.gif" alt="pdf">PDF</a>
+          <a href="./papers/ECCV2008.txt"><img src="./bibTex.png" alt="bibtex" width="20" height="20">BibTeX</a>
+          <a href="https://github.com/ofirpele/SiftDist_and_EMD_MOD"><img src="./github-mark-white.png" alt="code" width="20" height="20">Code</a>
+        </div>
+      </div>
+      
+      <div class="publication">
+        <div class="publication-title">Robust Real Time Pattern Matching using Bayesian Sequential Hypothesis Testing</div>
+        <div class="publication-authors">Ofir Pele, Michael Werman</div>
+        <div class="publication-venue">PAMI 2008</div>
+        <div class="publication-links">
+          <a href="./papers/pattern_matching_pami.pdf"><img src="./pdf.gif" alt="pdf">PDF</a>
+          <a href="./papers/pattern_matching_pami.txt"><img src="./bibTex.png" alt="bibtex" width="20" height="20">BibTeX</a>
+          <a href="https://github.com/ofirpele/PatternMatchingSequentialHypothesisTesting"><img src="./github-mark-white.png" alt="code" width="20" height="20">Code</a>
+        </div>
+      </div>
+      
+      <div class="publication">
+        <div class="publication-title">Accelerating Pattern Matching or How Much Can You Slide?</div>
+        <div class="publication-authors">Ofir Pele, Michael Werman</div>
+        <div class="publication-venue">ACCV 2007</div>
+        <div class="publication-links">
+          <a href="./papers/ACCV2007.pdf"><img src="./pdf.gif" alt="pdf">PDF</a>
+          <a href="./papers/ACCV2007.txt"><img src="./bibTex.png" alt="bibtex" width="20" height="20">BibTeX</a>
+        </div>
+      </div>
+    </section>
+    
+    <hr class="divider">
+    
+    <section class="teaching">
+      <h3>Teaching</h3>
+      
+      <div class="teaching-item">
+        <div class="teaching-year">2020</div>
+        <div class="teaching-content">
+          <a href="./teaching/style_and_good_practices.zip">Style and Good Practices in Programming</a>
+        </div>
+      </div>
+      
+      <div class="teaching-item">
+        <div class="teaching-year">2010</div>
+        <div class="teaching-content">
+          <a href="http://www.ics.forth.gr/eccv2010/intro.php">ECCV 2010</a> Tutorial: Distance Functions and Metric Learning
+          <div class="publication-links">
+            <a href="./teaching/DFML_ECCV2010_tutorial_part_1_v3.pdf"><img src="./pdf.gif" alt="pdf">PDF</a>
+            <a href="./teaching/DFML_ECCV2010_tutorial_part_1_v3.ppt"><img src="./pptx.png" alt="pptx" width="20" height="20">PPT</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
 </body>
 </html>
-
